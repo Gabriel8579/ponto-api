@@ -1,0 +1,14 @@
+version: "3.9"
+
+services: 
+  api:
+    build: ./
+    container_name: ponto_api
+    restart: always
+    volumes: 
+      - ./:/usr/api
+      - /usr/api/node_modules
+    ports: 
+      - 80:3000
+    env_file: 
+      .env
